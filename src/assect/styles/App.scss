@@ -1,0 +1,366 @@
+$headerHeight: 60px;
+$borderWidth: 1px;
+$appBgColor: #ff5f6e;
+
+@mixin containerHead() {
+  width: 100%;
+  // height: $headerHeight;
+  // border: $borderWidth solid aqua; //remove
+  background-color: $appBgColor;
+  text-align: center;
+  // vertical-align: middle;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+@mixin whiteBackground() {
+  background-color: #fff;
+}
+
+.App {
+  height: 99vh;
+  // border: 1px solid blue;
+  background-color: $appBgColor;
+
+  .container {
+    height: 100%;
+    z-index: 1;
+    // border: $borderWidth solid red;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .leftPanel {
+      width: 49%;
+      height: 100%;
+      // border: $borderWidth solid blue;
+
+      .leftPanelHead {
+        @include containerHead;
+        height: $headerHeight;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .connectionIndicator {
+          width: 49%;
+          display: flex;
+          align-content: center;
+          flex-wrap: wrap;
+          align-items: center;
+
+          .dot {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+          }
+
+          .active {
+            background-color: #4CAF50;
+            box-shadow: 0 0 10px #4CAF50;
+            animation: glow 1s infinite alternate;
+          }
+
+          .inactive {
+            background-color: #bbb;
+          }
+
+          @keyframes glow {
+            from {
+              box-shadow: 0 0 5px #4CAF50;
+            }
+
+            to {
+              box-shadow: 0 0 20px #4CAF50;
+            }
+          }
+        }
+
+        .additionalMenu {
+          width: 49%;
+          float: right;
+        }
+      }
+
+      .mainWorkArea {
+        @include whiteBackground;
+        height: calc(100% - $headerHeight - $borderWidth);
+        // border: $borderWidth solid lawngreen; //remove
+
+        //form css
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem;
+          background-color: #f9f9f9;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form row styling */
+        .form-row {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        /* Label and select styling */
+        .form-row span {
+          font-weight: bold;
+          color: #333;
+        }
+
+        .form-row {
+
+          select,
+          input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 1rem;
+          }
+
+          input#temperatureSlider {
+            width: 93%;
+          }
+        }
+
+        /* Button styling */
+        .on-button,
+        .off-button {
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 4px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .on-button {
+          background-color: #4caf50;
+          color: #fff;
+        }
+
+        .off-button {
+          background-color: #f44336;
+          color: #fff;
+        }
+
+        .on-button:hover {
+          background-color: #45a049;
+        }
+
+        .off-button:hover {
+          background-color: #e53935;
+        }
+
+        .landingPage-container {
+          display: flex;
+          align-content: center;
+          align-items: center;
+          justify-content: center;
+          top: 25%;
+          position: relative;
+          width: 100%;
+
+          button {
+            width: 95%;
+            height: 33%;
+            padding: 5px 5px 0 5px;
+
+            img {
+              width: 100%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .rightPanel {
+      width: 49%;
+      height: 100%;
+      // border: $borderWidth solid green; //remove
+
+      .rightPanel-container {
+        height: calc(99% - ($headerHeight));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .memberPanel {
+          height: 48%;
+          // border: $borderWidth solid yellow; //remove
+
+          .memberPanelHead {
+            @include containerHead;
+          }
+
+          .teamMember-container {
+            height: 63%;
+            padding: 5px;
+            @include whiteBackground;
+
+            .team-section {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              .team-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                gap: 20px;
+                height: 100%; // Adjust to fill the parent height
+
+                .team-member {
+                  position: relative;
+                  width: 150px;
+                  height: 100%; // Adjust to fill the parent height
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease-in-out;
+
+                  &:hover {
+                    transform: scale(1.05);
+                  }
+
+                  .image-container {
+                    width: 100%;
+                    height: 100%; // Adjust to fill the parent height
+
+                    img {
+                      width: 100%;
+                      height: 100%; // Adjust to fill the parent height
+                      object-fit: cover;
+                    }
+                  }
+
+                  .overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: rgba(255, 0, 0, 0.8);
+                    height: 50px;
+                    transform: translateY(100%);
+                    transition: transform 0.3s ease-in-out;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .text {
+                      text-align: center;
+                      font-size: 1rem;
+                      line-height: 1.4;
+                    }
+                  }
+
+                  &:hover .overlay {
+                    transform: translateY(0);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .aboutusPanel {
+          height: 48%;
+          // border: $borderWidth solid burlywood;//remove
+
+          .aboutusPanelHead {
+            @include containerHead;
+          }
+
+          .aboutus-container {
+            height: 100%;
+            padding: 5px;
+            @include whiteBackground;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.App {
+  #MainContainer {
+    display: flex;
+    flex-direction: row;
+
+    .leftPanel {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .rightPanel {
+      flex: 1;
+      padding: 20px;
+
+      .rightPanel-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .memberPanel,
+        .aboutusPanel {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #MainContainer {
+      flex-direction: row;
+
+      .leftPanel,
+      .rightPanel {
+        padding: 10px;
+      }
+
+      .rightPanel {
+        .rightPanel-container {
+
+          .memberPanel,
+          .aboutusPanel {
+            flex: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    #MainContainer {
+      flex-direction: column;
+      .leftPanel,
+      .rightPanel {
+        padding: 5px;
+        width: 97%;
+      }
+
+      .rightPanel {
+        .rightPanel-container {
+
+          .memberPanel,
+          .aboutusPanel {
+            flex: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
