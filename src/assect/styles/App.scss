@@ -81,7 +81,9 @@ $appBgColor: #ff5f6e;
 
         .additionalMenu {
           width: 49%;
-          float: right;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
         }
       }
 
@@ -192,7 +194,18 @@ $appBgColor: #ff5f6e;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
+        .settingPanel{
+          height: 98%;
+          .settingPanelHead{
+            @include containerHead;
+          }
+          .setting-container {
+            background-color: #fff;
+            padding: 8px;
+            overflow-y: scroll;
+            height: 90%;
+          }
+        }
         .memberPanel {
           height: 48%;
           // border: $borderWidth solid yellow; //remove
@@ -345,6 +358,7 @@ $appBgColor: #ff5f6e;
   @media (max-width: 480px) {
     #MainContainer {
       flex-direction: column;
+
       .leftPanel,
       .rightPanel {
         padding: 5px;

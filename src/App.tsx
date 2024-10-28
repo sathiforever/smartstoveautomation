@@ -1,11 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import MoreMenu from "./Components/MoreMenu";
-import "./assect/styles/App.scss";
+import StoveSetting from "./Components/StoveSetting";
 import BluetoothComponent from "./Components/ConnectionIndicator";
 import Temperature from "./Components/Temperature";
 import MembersList from "./Components/MembersList";
 import landingPage from "./assect/images/landing-page.jpg";
-import { Link } from "react-router-dom";
+import "./assect/styles/App.scss";
 
 interface TempLevel {
   min: string;
@@ -16,7 +17,7 @@ function App() {
   const [tempLevel, setTempLevel] = useState<TempLevel>({ min: "", max: "" });
   const [isTempSet, setIsTempSet] = useState<boolean>(false);
   const [loadPage, setLoadPage] = useState<boolean | null>(null);
-  // const [btConnection, setBtConnection] = useState<boolean | null>(null);
+  const [panel, setPanel] = useState<string | null>(null);
 
   useEffect(() => {
     const lstate = localStorage.getItem("landingPageStatus");
@@ -26,15 +27,6 @@ function App() {
       localStorage.setItem("landingPageStatus", "true");
       setLoadPage(true);
     }
-
-    //Blutthooth connection
-    // const btStatus = localStorage.getItem("bluethoothStatus");
-    // if(btStatus){
-    //   setBtConnection(btStatus === 'true')
-    // }else{
-    //   localStorage.setItem("bluethoothStatus", "true");
-    //   setBtConnection(true);
-    // }
   }, []);
 
   const handlePageChange = () => {
@@ -61,7 +53,7 @@ function App() {
           <div className="leftPanelHead">
             <BluetoothComponent />
             <div className="additionalMenu">
-              <MoreMenu />
+              <MoreMenu setPanel={setPanel} />
             </div>
           </div>
           <div className="mainWorkArea">
@@ -116,23 +108,42 @@ function App() {
         </section>
         <section className="rightPanel">
           <div className="rightPanel-container">
-            <section className="memberPanel">
-              <div className="memberPanelHead">
-                <h3>Lovely Team Member</h3>
-              </div>
-              <div className="teamMember-container">
-                <MembersList />
-              </div>
-            </section>
-            <section className="aboutusPanel">
-              <div className="aboutusPanelHead">
-                <h3>about us</h3>
-              </div>
-              <div className="aboutus-container">content</div>
-            </section>
+            {panel === "right" ? (
+              
+              <section className="settingPanel">
+                  <div className="memberPanelHead">
+                    <h3>Stove setting</h3>
+                  </div>
+                  <div className="setting-container">
+                  <StoveSetting />
+                  </div>
+                </section>
+            ) : (
+              <>
+                <section className="memberPanel">
+                  <div className="memberPanelHead">
+                    <h3>Lovely Team Member</h3>
+                  </div>
+                  <div className="teamMember-container">
+                    <MembersList />
+                  </div>
+                </section>
+                <section className="aboutusPanel">
+                  <div className="aboutusPanelHead">
+                    <h3>About project</h3>
+                  </div>
+                  <div className="aboutus-container">
+                    Project explanation content here
+                  </div>
+                </section>
+              </>
+            )}
           </div>
         </section>
       </div>
+      {/* <Routes>
+        <Route path="/StoveSetting" element={<StoveSetting />} />
+      </Routes> */}
     </div>
   );
 }

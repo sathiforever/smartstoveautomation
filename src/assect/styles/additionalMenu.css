@@ -5,7 +5,10 @@
     justify-content: flex-end;
     align-items: center;
   }
-  
+  .MoreMenu-container a.settingMenu{
+    color: white;
+    text-decoration: none;
+  }
   .more-btn {
     background: none;
     border: none;

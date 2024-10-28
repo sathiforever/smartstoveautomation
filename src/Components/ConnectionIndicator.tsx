@@ -1,29 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const BluetoothComponent: React.FC = (status: any) => {
+const BluetoothComponent: React.FC = () => {
   const [isConnected, setIsConnected] = useState<boolean>(false);
 
-  useEffect(() => {
-    const checkBluetoothConnection = async () => {
-      try {
-        const device = await navigator.bluetooth.requestDevice({
-          acceptAllDevices: true,
-        });
-        const server = await device.gatt?.connect();
-        if (server) {
-          setIsConnected(true);
-        }
-      } catch (error) {
-        console.error("Bluetooth connection failed:", error);
-        setIsConnected(false);
+  const checkBluetoothConnection = async () => {
+    try {
+      const device = await navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
+      });
+      const server = await device.gatt?.connect();
+      if (server) {
+        setIsConnected(true);
       }
-    };
-
-    checkBluetoothConnection();
-  }, []);
+    } catch (error) {
+      console.error("Bluetooth connection failed:", error);
+      setIsConnected(false);
+    }
+  };
 
   return (
     <div className="connectionIndicator">
+      <button onClick={checkBluetoothConnection}>Pair Bluetooth</button>
       {isConnected ? (
         <div className="dot active"></div>
       ) : (

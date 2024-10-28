@@ -1,0 +1,158 @@
+[debug] [2024-10-28T14:19:43.578Z] ----------------------------------------------------------------------
+[debug] [2024-10-28T14:19:43.580Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sathiyanarayanan.m\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-10-28T14:19:43.581Z] CLI Version:   13.23.0
+[debug] [2024-10-28T14:19:43.581Z] Platform:      win32
+[debug] [2024-10-28T14:19:43.581Z] Node Version:  v22.7.0
+[debug] [2024-10-28T14:19:43.581Z] Time:          Mon Oct 28 2024 19:49:43 GMT+0530 (India Standard Time)
+[debug] [2024-10-28T14:19:43.581Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-28T14:19:43.640Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-28T14:19:43.640Z] > authorizing via signed-in user (sathiyanarayanamoorthi@gmail.com)
+[debug] [2024-10-28T14:19:43.640Z] [iam] checking project smartstoveautomation for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-28T14:19:43.641Z] Checked if tokens are valid: false, expires at: 1730123484806
+[debug] [2024-10-28T14:19:43.641Z] Checked if tokens are valid: false, expires at: 1730123484806
+[debug] [2024-10-28T14:19:43.641Z] > refreshing access token with scopes: []
+[debug] [2024-10-28T14:19:43.642Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-28T14:19:43.642Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-28T14:19:44.014Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-10-28T14:19:44.014Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-28T14:19:44.021Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartstoveautomation:testIamPermissions [none]
+[debug] [2024-10-28T14:19:44.021Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartstoveautomation:testIamPermissions x-goog-quota-user=projects/smartstoveautomation
+[debug] [2024-10-28T14:19:44.021Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartstoveautomation:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-28T14:19:46.092Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartstoveautomation:testIamPermissions 200
+[debug] [2024-10-28T14:19:46.092Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartstoveautomation:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-28T14:19:46.093Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:46.094Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:46.094Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/smartstoveautomation [none]
+[debug] [2024-10-28T14:19:46.933Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/smartstoveautomation 200
+[debug] [2024-10-28T14:19:46.933Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/smartstoveautomation {"projectId":"smartstoveautomation","projectNumber":"223817060027","displayName":"smartstoveautomation","name":"projects/smartstoveautomation","resources":{"hostingSite":"smartstoveautomation"},"state":"ACTIVE","etag":"1_a0976688-c03d-4be0-8d44-60d636ceeea6"}
+[info] 
+[info] === Deploying to 'smartstoveautomation'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-10-28T14:19:46.938Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:46.938Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:46.938Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions [none]
+[debug] [2024-10-28T14:19:46.938Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-10-28T14:19:48.986Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions 200
+[debug] [2024-10-28T14:19:48.986Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions {"name":"projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[smartstoveautomation]: beginning deploy... 
+[info] i  hosting[smartstoveautomation]: found 16 files in build 
+[debug] [2024-10-28T14:19:49.009Z] [hosting] uploading with 200 concurrency
+[debug] [2024-10-28T14:19:49.010Z] [hosting] hash cache [YnVpbGQ] not populated
+[debug] [2024-10-28T14:19:49.111Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.111Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.112Z] [hosting] hash cache [YnVpbGQ] stored for 16 files
+[debug] [2024-10-28T14:19:49.112Z] [hosting][hash queue][FINAL] {"max":97,"min":10,"avg":21.4375,"active":0,"complete":16,"success":16,"errored":0,"retried":0,"total":16,"elapsed":101}
+[debug] [2024-10-28T14:19:49.113Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99:populateFiles [none]
+[debug] [2024-10-28T14:19:49.113Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99:populateFiles {"files":{"/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/index.html":"4e0eb4cb3b426ff036dd35f065a5e6e28738796d8d6a67b023e60abd8e79f3ec","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/asset-manifest.json":"c26d46b0ff7adc64fcb9a26ca1156a8d99e96720db862dd6563fc5044b3ab3fa","/404.html":"762bf484ba67404bd1a3b181546ea28d60dfddf18e9dd4795d8d25bcf3c1a890","/static/js/453.92c26e1a.chunk.js":"eaaeef312269da7d22a3057bc226aa9d57b4ac0241754b1d8b4c29611fbfedbc","/static/js/main.022c9f62.js.LICENSE.txt":"d68e51bab5c4ae4c9696df40bce1404b4218200baa23b20f8fca9b5c91d3ec0e","/static/css/main.a9ff4741.css":"bec668909ecddbf18263328772151e126b57a38ff20293ad1db058daafd1b163","/static/css/main.a9ff4741.css.map":"81f7b461bb0a624bd701e061f6222e3d9cd2342bb0630eab53ad4c727b37a5b4","/static/js/453.92c26e1a.chunk.js.map":"0ddad456e4137e9e63d5b0d4800c18086ad9457b03680e0c51f859c882af035f","/static/media/landing-page.0080e3e65a8f537a4771.jpg":"879635049aea6fccd68f9ba3f9bea23ddefcbdfadbbef2209793bd607c079040","/static/js/main.022c9f62.js":"5fbdb0f051108077deb6fe128cf6c64d1923a0086d3d2aad3da66b6afa494623","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/static/js/main.022c9f62.js.map":"49d09106f10a039d1cb1afd1ddb71592366bb1fe69a86a3f69d72c926cb58706"}}
+[debug] [2024-10-28T14:19:49.644Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99:populateFiles 200
+[debug] [2024-10-28T14:19:49.645Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99:populateFiles {"uploadRequiredHashes":["49d09106f10a039d1cb1afd1ddb71592366bb1fe69a86a3f69d72c926cb58706","d68e51bab5c4ae4c9696df40bce1404b4218200baa23b20f8fca9b5c91d3ec0e","eaaeef312269da7d22a3057bc226aa9d57b4ac0241754b1d8b4c29611fbfedbc","0ddad456e4137e9e63d5b0d4800c18086ad9457b03680e0c51f859c882af035f","5fbdb0f051108077deb6fe128cf6c64d1923a0086d3d2aad3da66b6afa494623","4e0eb4cb3b426ff036dd35f065a5e6e28738796d8d6a67b023e60abd8e79f3ec","81f7b461bb0a624bd701e061f6222e3d9cd2342bb0630eab53ad4c727b37a5b4","bec668909ecddbf18263328772151e126b57a38ff20293ad1db058daafd1b163","c26d46b0ff7adc64fcb9a26ca1156a8d99e96720db862dd6563fc5044b3ab3fa","879635049aea6fccd68f9ba3f9bea23ddefcbdfadbbef2209793bd607c079040"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files"}
+[debug] [2024-10-28T14:19:49.646Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.647Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.647Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.648Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.649Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.649Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.649Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.649Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.649Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:49.649Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/49d09106f10a039d1cb1afd1ddb71592366bb1fe69a86a3f69d72c926cb58706 [none]
+[debug] [2024-10-28T14:19:49.649Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/49d09106f10a039d1cb1afd1ddb71592366bb1fe69a86a3f69d72c926cb58706 [stream]
+[debug] [2024-10-28T14:19:49.651Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/d68e51bab5c4ae4c9696df40bce1404b4218200baa23b20f8fca9b5c91d3ec0e [none]
+[debug] [2024-10-28T14:19:49.651Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/d68e51bab5c4ae4c9696df40bce1404b4218200baa23b20f8fca9b5c91d3ec0e [stream]
+[debug] [2024-10-28T14:19:49.652Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/eaaeef312269da7d22a3057bc226aa9d57b4ac0241754b1d8b4c29611fbfedbc [none]
+[debug] [2024-10-28T14:19:49.652Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/eaaeef312269da7d22a3057bc226aa9d57b4ac0241754b1d8b4c29611fbfedbc [stream]
+[debug] [2024-10-28T14:19:49.652Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/0ddad456e4137e9e63d5b0d4800c18086ad9457b03680e0c51f859c882af035f [none]
+[debug] [2024-10-28T14:19:49.653Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/0ddad456e4137e9e63d5b0d4800c18086ad9457b03680e0c51f859c882af035f [stream]
+[debug] [2024-10-28T14:19:49.654Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/5fbdb0f051108077deb6fe128cf6c64d1923a0086d3d2aad3da66b6afa494623 [none]
+[debug] [2024-10-28T14:19:49.654Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/5fbdb0f051108077deb6fe128cf6c64d1923a0086d3d2aad3da66b6afa494623 [stream]
+[debug] [2024-10-28T14:19:49.655Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/4e0eb4cb3b426ff036dd35f065a5e6e28738796d8d6a67b023e60abd8e79f3ec [none]
+[debug] [2024-10-28T14:19:49.655Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/4e0eb4cb3b426ff036dd35f065a5e6e28738796d8d6a67b023e60abd8e79f3ec [stream]
+[debug] [2024-10-28T14:19:49.655Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/81f7b461bb0a624bd701e061f6222e3d9cd2342bb0630eab53ad4c727b37a5b4 [none]
+[debug] [2024-10-28T14:19:49.655Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/81f7b461bb0a624bd701e061f6222e3d9cd2342bb0630eab53ad4c727b37a5b4 [stream]
+[debug] [2024-10-28T14:19:49.656Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/bec668909ecddbf18263328772151e126b57a38ff20293ad1db058daafd1b163 [none]
+[debug] [2024-10-28T14:19:49.656Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/bec668909ecddbf18263328772151e126b57a38ff20293ad1db058daafd1b163 [stream]
+[debug] [2024-10-28T14:19:49.656Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/c26d46b0ff7adc64fcb9a26ca1156a8d99e96720db862dd6563fc5044b3ab3fa [none]
+[debug] [2024-10-28T14:19:49.656Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/c26d46b0ff7adc64fcb9a26ca1156a8d99e96720db862dd6563fc5044b3ab3fa [stream]
+[debug] [2024-10-28T14:19:49.657Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/879635049aea6fccd68f9ba3f9bea23ddefcbdfadbbef2209793bd607c079040 [none]
+[debug] [2024-10-28T14:19:49.657Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/879635049aea6fccd68f9ba3f9bea23ddefcbdfadbbef2209793bd607c079040 [stream]
+[debug] [2024-10-28T14:19:49.657Z] [hosting][populate queue][FINAL] {"max":539,"min":539,"avg":539,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":547}
+[debug] [2024-10-28T14:19:49.657Z] [hosting] uploads queued: 10
+[debug] [2024-10-28T14:19:51.733Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/d68e51bab5c4ae4c9696df40bce1404b4218200baa23b20f8fca9b5c91d3ec0e 200
+[debug] [2024-10-28T14:19:51.733Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/d68e51bab5c4ae4c9696df40bce1404b4218200baa23b20f8fca9b5c91d3ec0e [stream]
+[debug] [2024-10-28T14:19:51.931Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/bec668909ecddbf18263328772151e126b57a38ff20293ad1db058daafd1b163 200
+[debug] [2024-10-28T14:19:51.932Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/bec668909ecddbf18263328772151e126b57a38ff20293ad1db058daafd1b163 [stream]
+[debug] [2024-10-28T14:19:51.933Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/4e0eb4cb3b426ff036dd35f065a5e6e28738796d8d6a67b023e60abd8e79f3ec 200
+[debug] [2024-10-28T14:19:51.933Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/4e0eb4cb3b426ff036dd35f065a5e6e28738796d8d6a67b023e60abd8e79f3ec [stream]
+[debug] [2024-10-28T14:19:51.934Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/5fbdb0f051108077deb6fe128cf6c64d1923a0086d3d2aad3da66b6afa494623 200
+[debug] [2024-10-28T14:19:51.934Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/5fbdb0f051108077deb6fe128cf6c64d1923a0086d3d2aad3da66b6afa494623 [stream]
+[debug] [2024-10-28T14:19:51.934Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/49d09106f10a039d1cb1afd1ddb71592366bb1fe69a86a3f69d72c926cb58706 200
+[debug] [2024-10-28T14:19:51.934Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/49d09106f10a039d1cb1afd1ddb71592366bb1fe69a86a3f69d72c926cb58706 [stream]
+[debug] [2024-10-28T14:19:51.935Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/eaaeef312269da7d22a3057bc226aa9d57b4ac0241754b1d8b4c29611fbfedbc 200
+[debug] [2024-10-28T14:19:51.935Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/eaaeef312269da7d22a3057bc226aa9d57b4ac0241754b1d8b4c29611fbfedbc [stream]
+[debug] [2024-10-28T14:19:51.935Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/0ddad456e4137e9e63d5b0d4800c18086ad9457b03680e0c51f859c882af035f 200
+[debug] [2024-10-28T14:19:51.935Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/0ddad456e4137e9e63d5b0d4800c18086ad9457b03680e0c51f859c882af035f [stream]
+[debug] [2024-10-28T14:19:51.936Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/c26d46b0ff7adc64fcb9a26ca1156a8d99e96720db862dd6563fc5044b3ab3fa 200
+[debug] [2024-10-28T14:19:51.936Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/c26d46b0ff7adc64fcb9a26ca1156a8d99e96720db862dd6563fc5044b3ab3fa [stream]
+[debug] [2024-10-28T14:19:51.978Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/879635049aea6fccd68f9ba3f9bea23ddefcbdfadbbef2209793bd607c079040 200
+[debug] [2024-10-28T14:19:51.979Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/879635049aea6fccd68f9ba3f9bea23ddefcbdfadbbef2209793bd607c079040 [stream]
+[debug] [2024-10-28T14:19:52.367Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/81f7b461bb0a624bd701e061f6222e3d9cd2342bb0630eab53ad4c727b37a5b4 200
+[debug] [2024-10-28T14:19:52.367Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/smartstoveautomation/versions/4213009058cf0c99/files/81f7b461bb0a624bd701e061f6222e3d9cd2342bb0630eab53ad4c727b37a5b4 [stream]
+[debug] [2024-10-28T14:19:52.367Z] [hosting][upload queue][FINAL] {"max":2719,"min":2086,"avg":2314,"active":0,"complete":10,"success":10,"errored":0,"retried":0,"total":10,"elapsed":2722}
+[info] +  hosting[smartstoveautomation]: file upload complete 
+[debug] [2024-10-28T14:19:52.370Z] [hosting] deploy completed after 3381ms
+[debug] [2024-10-28T14:19:52.371Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "smartstoveautomation"
+    },
+    "version": "projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99"
+  }
+]
+[info] i  hosting[smartstoveautomation]: finalizing version... 
+[debug] [2024-10-28T14:19:52.373Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:52.374Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:52.374Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions/4213009058cf0c99 updateMask=status%2Cconfig
+[debug] [2024-10-28T14:19:52.374Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions/4213009058cf0c99 {"status":"FINALIZED","config":{}}
+[debug] [2024-10-28T14:19:53.163Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions/4213009058cf0c99 200
+[debug] [2024-10-28T14:19:53.163Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/versions/4213009058cf0c99 {"name":"projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-10-28T14:19:10.253701Z","createUser":{"email":"sathiyanarayanamoorthi@gmail.com"},"finalizeTime":"2024-10-28T14:19:14.581163Z","finalizeUser":{"email":"sathiyanarayanamoorthi@gmail.com"}}
+[debug] [2024-10-28T14:19:53.163Z] [hosting] finalized version for smartstoveautomation:[object Object]
+[info] +  hosting[smartstoveautomation]: version finalized 
+[info] i  hosting[smartstoveautomation]: releasing new version... 
+[debug] [2024-10-28T14:19:53.165Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:53.165Z] Checked if tokens are valid: true, expires at: 1730128783014
+[debug] [2024-10-28T14:19:53.165Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/channels/live/releases versionName=projects%2F223817060027%2Fsites%2Fsmartstoveautomation%2Fversions%2F4213009058cf0c99
+[debug] [2024-10-28T14:19:53.165Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/channels/live/releases {}
+[debug] [2024-10-28T14:19:54.384Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/channels/live/releases 200
+[debug] [2024-10-28T14:19:54.384Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/smartstoveautomation/channels/live/releases {"name":"projects/223817060027/sites/smartstoveautomation/channels/live/releases/1730125155031000","version":{"name":"projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-10-28T14:19:10.253701Z","createUser":{"email":"sathiyanarayanamoorthi@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ0kx8MKm_PJmPyB5bYkdxegsD_1Bo6KcopbBJfbYnLXitiA5M"},"finalizeTime":"2024-10-28T14:19:14.581163Z","finalizeUser":{"email":"sathiyanarayanamoorthi@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ0kx8MKm_PJmPyB5bYkdxegsD_1Bo6KcopbBJfbYnLXitiA5M"}},"type":"DEPLOY","releaseTime":"2024-10-28T14:19:15.031Z","releaseUser":{"email":"sathiyanarayanamoorthi@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ0kx8MKm_PJmPyB5bYkdxegsD_1Bo6KcopbBJfbYnLXitiA5M"}}
+[debug] [2024-10-28T14:19:54.384Z] [hosting] release: {"name":"projects/223817060027/sites/smartstoveautomation/channels/live/releases/1730125155031000","version":{"name":"projects/223817060027/sites/smartstoveautomation/versions/4213009058cf0c99","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-10-28T14:19:10.253701Z","createUser":{"email":"sathiyanarayanamoorthi@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ0kx8MKm_PJmPyB5bYkdxegsD_1Bo6KcopbBJfbYnLXitiA5M"},"finalizeTime":"2024-10-28T14:19:14.581163Z","finalizeUser":{"email":"sathiyanarayanamoorthi@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ0kx8MKm_PJmPyB5bYkdxegsD_1Bo6KcopbBJfbYnLXitiA5M"}},"type":"DEPLOY","releaseTime":"2024-10-28T14:19:15.031Z","releaseUser":{"email":"sathiyanarayanamoorthi@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ0kx8MKm_PJmPyB5bYkdxegsD_1Bo6KcopbBJfbYnLXitiA5M"}}
+[info] +  hosting[smartstoveautomation]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/smartstoveautomation/overview
+[info] Hosting URL: https://smartstoveautomation.web.app
+[debug] [2024-10-28T14:20:21.156Z] Error: Timed out.
+    at Timeout.<anonymous> (C:\Users\sathiyanarayanan.m\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:268:49)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+[error] 
+[error] Error: An unexpected error has occurred.
